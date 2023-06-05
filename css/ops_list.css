@@ -1,0 +1,30 @@
+@import url('config.css');
+
+#output-span {
+	height:auto;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	padding: 1rem;
+	border: 2px solid var(--fg2);
+}
+
+#ops-container {
+	margin: 1rem 0rem 0rem;
+	flex-grow: 1;
+	background-color: var(--bg2);
+	border: 2px solid var(--fg2);
+}
+
+#ops-list {
+	font-size: 1.25em;
+	text-align: left;
+	list-style-position: inside;
+	list-style-type:decimal;
+	padding: 1rem;
+	background-color:rgb(0, 0, 0, 0);
+}
+
+#ops-list * {
+	background-color: inherit;
+}

@@ -1,0 +1,20 @@
+@import url('config.css');
+
+#media-controls-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content:space-between;
+	gap: 2rem;
+	margin-top: 2rem;
+	grid-auto-rows: max-content;
+}
+
+.media-button {
+	vertical-align:middle;
+	text-align: center;
+	font-size: 2rem;
+	padding: 1rem;
+	background-color: var(--fg2);
+	color: var(--bg);
+}
+

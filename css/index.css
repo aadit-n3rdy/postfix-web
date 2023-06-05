@@ -1,0 +1,34 @@
+@import url(config.css);
+@import url(stack.css);
+@import url(input.css);
+@import url(ops_list.css);
+@import url(media_controls.css);
+
+#header {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--fg2);
+    color: var(--bg);
+}
+
+#main-div {
+	display: flex;
+	justify-content:space-between;
+	width: 90vw;
+	margin: auto;
+	margin-top: 3rem;
+	padding: 1rem;
+}
+
+#postfix {
+	width: 100%;
+	text-align: center;
+	font-size: 3rem;
+	background-color: var(--fg2);
+	color: var(--bg);
+	padding: 1rem;
+	font-weight:bolder;
+}
