@@ -7,7 +7,7 @@ window.addEventListener("load", eval_load)
 
 function eval_load() {
 	input = document.getElementsByClassName("input-box")
-	cur = 0;
+	cur = -1;
 	document.getElementById("reset").addEventListener("click", eval_reset)
 	document.getElementById("next").addEventListener("click", eval_next)
 	document.getElementById("back").addEventListener("click", eval_prev);
@@ -21,6 +21,12 @@ function eval_reset() {
 	cur = -1
 	for (i of input) {
 		i.classList.remove("input-box-cur")
+	}
+}
+
+function eval_getres() {
+	if (stackSize == 1) {
+		oplist_insert("Result is " + stack_pop())
 	}
 }
 
@@ -38,6 +44,7 @@ function eval_next() {
 		opt = input[cur].value.trim()
 	} while (opt==="")
 	if (cur >= 16) {
+		eval_getres()
 		return false
 	}
 	const num = parseInt(opt)
