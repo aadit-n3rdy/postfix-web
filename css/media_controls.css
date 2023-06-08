@@ -12,9 +12,13 @@
 .media-button {
 	vertical-align:middle;
 	text-align: center;
-	font-size: 2rem;
+	font-size: 3rem;
 	padding: 1rem;
 	background-color: var(--fg2);
 	color: var(--bg);
+	cursor:pointer;
 }
 
+.media-button:hover {
+	background-color: var(--fg);
+}

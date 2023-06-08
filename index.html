@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	    <script src="https://kit.fontawesome.com/b67c174e45.js" crossorigin="anonymous"></script>
-	    <link rel="stylesheet" href="css/index.css">
-	    <script src="scripts/stack.js"></script>
-	    <title>Postfix Expressions Evaluator</title>
-    </head>
-    <body>
-	    <!-- <div id="header">Postfix Expression Evaluator</div> -->
-	<div id="main-div">
-		<span id="input-span">
-			<div id="postfix">Postfix Expression Evaluator</div>
-			<form id="input-form" action="javascript:console.log('Submitted!')">
-				<div class="label" id="input-label">Input:</div>
-				<div id="input-boxes-container">
-				<input type="text" class="input-box" id="inp01">
-				<input type="text" class="input-box" id="inp02">
-				<input type="text" class="input-box" id="inp03">
-				<input type="text" class="input-box" id="inp04">
-				<input type="text" class="input-box" id="inp05">
-				<input type="text" class="input-box" id="inp06">
-				<input type="text" class="input-box" id="inp07">
-				<input type="text" class="input-box" id="inp08">
-				<input type="text" class="input-box" id="inp09">
-				<input type="text" class="input-box" id="inp10">
-				<input type="text" class="input-box" id="inp11">
-				<input type="text" class="input-box" id="inp12">
-				<input type="text" class="input-box" id="inp13">
-				<input type="text" class="input-box" id="inp14">
-				<input type="text" class="input-box" id="inp15">
+	<head>
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="css/index.css">
+		<script src="scripts/stack.js"></script>
+		<script src="scripts/eval.js"></script>
+		<script src="scripts/oplist.js"></script>
+		<title>Postfix Expressions Evaluator</title>
+	</head>
+	<body>
+		<!-- <div id="header">Postfix Expression Evaluator</div> -->
+		<div id="main-div">
+			<span id="input-span">
+				<div id="postfix">Postfix Expression Evaluator</div>
+				<form id="input-form" action="javascript:eval_reset()">
+					<div class="label" id="input-label">Input:</div>
+					<div id="input-boxes-container">
+						<input type="text" class="input-box" id="inp01">
+						<input type="text" class="input-box" id="inp02">
+						<input type="text" class="input-box" id="inp03">
+						<input type="text" class="input-box" id="inp04">
+						<input type="text" class="input-box" id="inp05">
+						<input type="text" class="input-box" id="inp06">
+						<input type="text" class="input-box" id="inp07">
+						<input type="text" class="input-box" id="inp08">
+						<input type="text" class="input-box" id="inp09">
+						<input type="text" class="input-box" id="inp10">
+						<input type="text" class="input-box" id="inp11">
+						<input type="text" class="input-box" id="inp12">
+						<input type="text" class="input-box" id="inp13">
+						<input type="text" class="input-box" id="inp14">
+						<input type="text" class="input-box" id="inp15">
+						<input type="text" class="input-box" id="inp16">
+					</div>
+					<div id="button-container">
+						<input class="inpbutton" type="reset" value="CLEAR" id="clear-button">
+						<input class="inpbutton" type="submit" value="LOAD" id="load-button">
+					</div>
+				</form>
+				<div id="media-controls-container">
+					<span id="reset" class="media-button bx bx-rewind" ></span>
+					<span id="back"  class="media-button bx bx-skip-previous" ></span>
+					<span id="play"  class="media-button bx bx-play" ></span>
+					<span id="next"  class="media-button bx bx-skip-next" ></span>
+					<span id="ffw"   class="media-button bx bx-fast-forward" ></span>
 				</div>
-				<input type="submit" value="LOAD" id="load-button">
-			</form>
-			<div id="media-controls-container">
-				<span id="reset" class="media-button fa-solid fa-backward-fast"></span>
-				<span id="back" class="media-button fa-solid fa-backward-step"></span>
-				<span id="play" class="media-button fa-solid fa-play"></span>
-				<span id="next" class="fa-solid fa-forward-step media-button"></span>
-				<span id="ffw" class="media-button fa-solid fa-forward-fast"></span>
-			</div>
-		</span>
-		<span id="output-span">
-			<div class="label" id="ops-label">Stack Operations: </div>
-			<div id="ops-container">
-				<ol id="ops-list">
-					<li>Thingy</li>
-					<li>Thingy2</li>
-				</ol>
-			</div>
-		</span>
-		<span id="stack-span">
-			<div id="stack">
-				<span class="stack-elem stack-elem-non-empty">10</span>
-				<span class="stack-elem stack-elem-non-empty">2</span>
-				<span class="stack-elem stack-elem-non-empty">30 </span>
-				<span class="stack-elem">  </span>
-				<span class="stack-elem">  </span>
-				<span class="stack-elem">  </span>
-				<span class="stack-elem">  </span>
-				<span class="stack-elem">  </span>
-				<span class="stack-elem">  </span>
-				<span class="stack-elem">  </span>
-			</div>
-		</span>
+			</span>
+			<span id="output-span">
+				<div class="label" id="ops-label">Operations: </div>
+				<div id="ops-container">
+					<ol id="ops-list">
+					</ol>
+				</div>
+			</span>
+			<span id="stack-span">
+				<div id="stack">
+					<span class="stack-elem"></span>
+					<span class="stack-elem"></span>
+					<span class="stack-elem"></span>
+					<span class="stack-elem">  </span>
+					<span class="stack-elem">  </span>
+					<span class="stack-elem">  </span>
+					<span class="stack-elem">  </span>
+					<span class="stack-elem">  </span>
+					<span class="stack-elem">  </span>
+					<span class="stack-elem">  </span>
+				</div>
+			</span>
 
-	</div>
-    </body>
+		</div>
+	</body>
 </html>

@@ -12,7 +12,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: left;
-	margin-top: 1rem;
+	margin: 1rem;
 	gap: 1rem;
 	width: 100%;
 }
@@ -36,15 +36,25 @@
 	padding: 1rem;
 }
 
-#load-button {
+#button-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	gap: 2rem;
+	height: 3em;
+}
+
+.inpbutton {
 	background-color: var(--fg2);
 	color: var(--bg);
 	font-size: 1.25rem;
-	margin-top: 1rem;
-	padding: 1em 1.5em;
-	align-self: flex-end;
+	cursor:pointer;
 }
 
-#load-button:hover {
+.inpbutton:hover {
 	background-color: var(--fg);
+}
+
+.input-box-cur {
+	background-color: var(--fg2);
 }
