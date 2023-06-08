@@ -53,6 +53,8 @@ function eval_next() {
 			oplist_insert("ERROR: Stack underflow at input no. " + (cur+1))
 			return false
 		}
+		a = parseInt(a)
+		b = parseInt(b)
 		let res = 0
 		if (opt == "*") {
 			res = a * b
