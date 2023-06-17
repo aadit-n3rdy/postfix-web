@@ -58,3 +58,7 @@
 .input-box-cur {
 	background-color: var(--fg2);
 }
+
+.input-invalid {
+	background-color: maroon;
+}
