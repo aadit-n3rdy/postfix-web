@@ -2,6 +2,8 @@ var input;
 var cur;
 
 const inpCount = 16
+var autoplay = false
+var autoplayInterval = 0;
 
 window.addEventListener("load", eval_load)
 
@@ -12,6 +14,7 @@ function eval_load() {
 	document.getElementById("next").addEventListener("click", eval_next)
 	document.getElementById("back").addEventListener("click", eval_prev);
 	document.getElementById("ffw").addEventListener("click", eval_skip_to_end);
+	document.getElementById("play").addEventListener("click", eval_toggle_autoplay);
 }
 
 function eval_reset() {
@@ -45,6 +48,9 @@ function eval_next() {
 	} while (opt==="")
 	if (cur >= 16) {
 		eval_getres()
+		if (autoplay) {
+			eval_toggle_autoplay();
+		}
 		return false
 	}
 	const num = parseInt(opt)
@@ -108,4 +114,22 @@ function eval_prev() {
 
 function eval_skip_to_end() {
 	while (eval_next()) {}
+}
+
+function eval_toggle_autoplay() {
+	console.log("Toggle autoplay");
+	if (autoplay) {
+		autoplay = false;
+		clearInterval(autoplayInterval);
+		const button = document.getElementById("play")
+		button.classList.remove("bx-pause");
+		button.classList.add("bx-play");
+	} else {
+		autoplay = true;
+		autoplayInterval = setInterval(eval_next, 1000);
+		const button = document.getElementById("play")
+		button.classList.remove("bx-play");
+		button.classList.add("bx-pause");
+
+	}
 }
